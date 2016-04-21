@@ -9,7 +9,7 @@ RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends curl ca-certificates \
     && apt-get install -y git \
-    && apt-get install -y graphicmagick \
+    && apt-get install -y graphicsmagick \
     && apt-get install -y imagemagick \ 
     && rm -rf /var/lib/apt/lists/*
 
