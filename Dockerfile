@@ -24,7 +24,8 @@ RUN buildDeps=' \
   && set -x \
     && apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
   && git clone https://github.com/twreporter/plate.git plate \
-    && cd plate \
+    && cd plate \ 
+    && git pull \
     && cp /config.js /gcskeyfile.json . \
     && cp -rf . .. \
     && cd .. \
