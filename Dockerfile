@@ -3,6 +3,7 @@ FROM node:4.2-slim
 RUN groupadd user && useradd --create-home --home-dir /home/user -g user user
 
 ENV REACT_SOURCE /usr/src/react
+ENV TZ=Asia/Taipei
 WORKDIR $REACT_SOURCE
 
 RUN set -x \
@@ -32,6 +33,8 @@ RUN cp -a /tmp/node_modules $REACT_SOURCE/
 # Add source files
 ADD . /tmp/
 RUN cp -a /tmp/plate/. $REACT_SOURCE/
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
