@@ -34,6 +34,7 @@ RUN cp -a /tmp/node_modules $REACT_SOURCE/
 ADD . /tmp/
 RUN cp -a /tmp/plate/. $REACT_SOURCE/
 
+# Set time zone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 EXPOSE 3000
