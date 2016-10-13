@@ -3,6 +3,7 @@ FROM node:4.2-slim
 RUN groupadd user && useradd --create-home --home-dir /home/user -g user user
 
 ENV REACT_SOURCE /usr/src/react
+ENV TZ=Asia/Taipei
 WORKDIR $REACT_SOURCE
 
 RUN set -x \
